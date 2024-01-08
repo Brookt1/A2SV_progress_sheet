@@ -13,8 +13,6 @@ class Solution:
             val=[*str(num)[1:]]
             val.sort()
             val.reverse()
-            if val[0]=='0':
-                val[0],val[1]=val[1],val[0]
             return -1*int(''.join(val))
 
         
