@@ -8,11 +8,11 @@ class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         
         fast,slow=head,head
-        visted=set()
+        meet=False
         while fast and fast.next:
-            if fast in visted:
-                return True
-            visted.add(slow)
             fast=fast.next.next
             slow=slow.next
-        return False
+            if slow==fast:
+                meet=True
+                break
+        return meet
